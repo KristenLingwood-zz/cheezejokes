@@ -55,8 +55,7 @@ class App extends Component {
   handleUpvote = id => {
     const updatedJokes = this.state.jokes.map(joke => {
       if (joke.id === id) {
-        joke.yay++;
-        return { ...joke };
+        return { ...joke, yay: joke.yay + 1 };
       }
       return joke;
     });
@@ -69,8 +68,7 @@ class App extends Component {
   handleDownvote = id => {
     const updatedJokes = this.state.jokes.map(joke => {
       if (joke.id === id) {
-        joke.boo++;
-        return { ...joke };
+        return { ...joke, boo: joke.boo + 1 };
       }
       return joke;
     });
